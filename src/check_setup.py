@@ -1,8 +1,4 @@
-"""Быстрая проверка Docker Qdrant и доступа к GigaChat API.
-
-Запуск: python -m src.check_setup
-Делает один платный/квотируемый запрос эмбеддинга.
-"""
+"""Проверка Qdrant и API эмбеддингов (ровно один тестовый запрос)."""
 from __future__ import annotations
 
 from src.config import get_settings
@@ -20,12 +16,11 @@ def main() -> None:
     finally:
         client.close()
 
-    settings.require_credentials()
-    result = EmbeddingService(settings).embed_query("Как поступить в Финансовый университет?")
-    if not result:
-        raise RuntimeError("Пустой эмбеддинг из API")
-    print(f"GigaChat API работает: {settings.embedding_model}, размерность {len(result)}")
-    print("Проверка пройдена. Теперь: python -m src.ingest --reset")
+    service = EmbeddingService(settings)
+    print(f"Проверка эмбеддингов: {service.identity}")
+    vector = service.embed_query("Как поступить в Финансовый университет?")
+    print(f"Эмбеддинги получены: размерность {len(vector)}")
+    print("Готово. Следующий шаг: python -m src.ingest --reset")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,7 @@
-# Все языковые модели и эмбеддинги работают по GigaChat API, без PyTorch.
+# GigaChat для генерации; Cloud.ru OpenAI-совместимый API для эмбеддингов.
+# Локальные ML-модели не устанавливаются.
 gigachat>=0.2.4,<0.3
+openai>=1.50.0,<3
 qdrant-client>=1.12.0
 streamlit>=1.39.0
 pypdf>=5.0.0
