@@ -1,0 +1,5 @@
+{"question":"Когда закончился прием документов без внутренних экзаменов в 2026 году?","expected_source":"dates_2026.md"}
+{"question":"Можно ли было отправить документы через Госуслуги?","expected_source":"submission_2026.md"}
+{"question":"Нужна ли справка 086/У для подачи документов?","expected_source":"faq_2026.md"}
+{"question":"Какой проходной балл будет в 2027 году?","expected_behavior":"no_verified_answer"}
+{"question":"Сколько стоит обучение на бизнес-информатике в рублях?","expected_behavior":"no_verified_answer"}

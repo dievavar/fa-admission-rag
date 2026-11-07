@@ -1,0 +1,62 @@
+# ==============================
+# GigaChat + Qdrant RAG MVP
+# ==============================
+
+# Secrets and local environment (keep .env.example in Git)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.streamlit/secrets.toml
+
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python caches, tests, type checking
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Packaging and builds
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# IDEs and macOS
+.DS_Store
+.AppleDouble
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+.cache/
+
+# Local Qdrant data. Docker named volumes are stored outside the repository.
+qdrant_storage/
+qdrant_data/
+data/qdrant_local/
+data/qdrant_storage/
+
+# Derived document data, not original demonstration documents
+data/processed/
+data/embeddings/
