@@ -36,6 +36,30 @@ OCR_PROMPT = (
 MAX_IMAGE_BYTES = 14 * 1024 * 1024  # API image limit: 15 MB; keep margin
 MIN_ALNUM = 25
 
+# Conservative matching of recurring *provider responses*, not of source text.
+# Do not broaden this into keywords such as "правительство" or "льготы".
+MODERATION_TEXT_MARKERS = (
+    "генеративные языковые модели не обладают собственным мнением",
+    "иногда генеративные языковые модели могут создавать некорректные ответы",
+    "разговоры на чувствительные темы могут быть ограничены",
+    "ответы на вопросы, связанные с чувствительными темами",
+    "во избежание неправильного толкования, ответы на вопросы",
+)
+
+
+class OCRRefusalError(RuntimeError):
+    """The provider declined OCR for this page; it is not source text."""
+
+
+def is_moderation_refusal(text: str) -> bool:
+    normalized = re.sub(r"\s+", " ", text).casefold().replace("ё", "е")
+    return any(marker.replace("ё", "е") in normalized for marker in MODERATION_TEXT_MARKERS)
+
+
+def normalize_finish_reason(raw: object) -> str:
+    reason = getattr(raw, "value", raw)
+    return str(reason or "").strip().lower().rsplit(".", 1)[-1]
+
 
 def count_content_chars(text: str) -> int:
     return sum(ch.isalnum() for ch in text)
@@ -86,9 +110,16 @@ def parse_response_text(response: object) -> str:
     if not choices:
         raise RuntimeError("GigaChat Vision не вернул вариант ответа")
     choice = choices[0]
-    finish_reason = str(getattr(choice, "finish_reason", "") or "").lower()
-    if finish_reason in {"length", "max_tokens"} or "length" in finish_reason:
+    finish_reason = normalize_finish_reason(getattr(choice, "finish_reason", None))
+    if finish_reason == "blacklist":
+        raise OCRRefusalError(
+            "GigaChat отклонил страницу по тематическим ограничениям "
+            "(finish_reason=blacklist). Ответ нельзя индексировать."
+        )
+    if finish_reason in {"length", "max_tokens"}:
         raise RuntimeError("GigaChat ограничил длину OCR-ответа: страница распознана не полностью")
+    if finish_reason in {"error", "function_call"}:
+        raise RuntimeError(f"GigaChat вернул неожиданный OCR finish_reason={finish_reason}")
     message = getattr(choice, "message", None)
     content = getattr(message, "content", None)
     if not isinstance(content, str):
@@ -96,6 +127,11 @@ def parse_response_text(response: object) -> str:
     result = content.strip()
     if result.startswith("```"):
         result = re.sub(r"^```[^\n]*\n|\n```$", "", result).strip()
+    if is_moderation_refusal(result):
+        raise OCRRefusalError(
+            "В ответе GigaChat обнаружен текст модерационного отказа. "
+            "Страница не будет закэширована или проиндексирована."
+        )
     if count_content_chars(result) < MIN_ALNUM:
         raise RuntimeError("GigaChat Vision вернул слишком мало текста; индексация остановлена")
     return result
@@ -124,11 +160,22 @@ class GigaChatVisionOCR:
 
     def recognize(self, page_index: int) -> str:
         cache_file = self.cache_dir / f"page_{page_index + 1:04d}.txt"
+        skipped_file = self.cache_dir / f"page_{page_index + 1:04d}.skipped"
         if cache_file.exists():
             cached_text = cache_file.read_text(encoding="utf-8")
+            if is_moderation_refusal(cached_text):
+                # Do not keep provider refusals as document text, even from old runs.
+                cache_file.unlink()
+                skipped_file.touch()
+                print(f"  Страница {page_index + 1}: пропущена (отказ GigaChat)")
+                return ""
             if count_content_chars(cached_text) >= MIN_ALNUM:
+                skipped_file.unlink(missing_ok=True)
                 print(f"  Страница {page_index + 1}: OCR из кэша")
                 return cached_text
+        if skipped_file.exists():
+            print(f"  Страница {page_index + 1}: пропущена (отмечена ранее)")
+            return ""
         if self._client is None:
             raise RuntimeError("OCR client not opened: use 'with GigaChatVisionOCR(...) as ocr:'")
 
@@ -151,7 +198,13 @@ class GigaChatVisionOCR:
                     "temperature": 0.0,
                     "max_tokens": 4096,
                 })
-                text = parse_response_text(response)
+                try:
+                    text = parse_response_text(response)
+                except OCRRefusalError:
+                    # A provider refusal is not OCR data. Skip, but keep other pages.
+                    skipped_file.touch()
+                    print(f"  Страница {page_index + 1}: пропущена (отказ GigaChat)")
+                    return ""
             finally:
                 try:
                     self._client.delete_file(file_id)
@@ -173,7 +226,7 @@ class GigaChatVisionOCR:
 def get_pdf_page_texts(
     pdf_path: Path, *, cache_root: Path, mode: str = "auto"
 ) -> list[str]:
-    """Per-page text with OCR fallback, fail closed on any unrecognized page.
+    """Per-page text with OCR fallback; skip moderation refusals only.
 
     mode: auto     - OCR pages with under 45 alphanumeric characters;
           gigachat - OCR every page;
