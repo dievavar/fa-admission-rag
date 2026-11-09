@@ -1,0 +1,521 @@
+{
+  "note": "Разметка сделана непосредственно по PDF до запуска retrieval; эталоны привязаны к странице и пункту. Вопросы без ответа нельзя оценивать стандартной page Recall@K; их оценивают отдельно на корректный отказ от выдумывания. OCR-ошибки могут требовать сверки с изображением страницы. В файле ровно 35 ответимых кейсов; 5 негативных кейсов вынесены отдельно, поскольку прежний eval_retrieval.py требует непустой gold.",
+  "source_document": "rules_bachelor_2026_searchable.pdf",
+  "cases": [
+    {
+      "id": "f01_five_universities",
+      "question": "Во сколько вузов одновременно разрешено подать заявления на бакалавриат или специалитет?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 6
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 7
+        }
+      ],
+      "verified": true,
+      "category": "fact",
+      "difficulty": "easy"
+    },
+    {
+      "id": "f02_five_directions",
+      "question": "По скольким специальностям и направлениям подготовки можно одновременно участвовать в конкурсе внутри Финансового университета?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 7
+        }
+      ],
+      "verified": true,
+      "category": "fact",
+      "difficulty": "easy"
+    },
+    {
+      "id": "f03_exam_max",
+      "question": "Каков максимальный результат за одно вступительное испытание по правилам приёма?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 10
+        }
+      ],
+      "verified": true,
+      "category": "fact",
+      "difficulty": "easy"
+    },
+    {
+      "id": "f04_exam_publication",
+      "question": "Через сколько рабочих дней должны объявить результаты внутреннего вступительного испытания?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 11
+        }
+      ],
+      "verified": true,
+      "category": "fact",
+      "difficulty": "easy"
+    },
+    {
+      "id": "f05_lists_updates",
+      "question": "Сколько раз в сутки должны обновляться конкурсные списки, если есть изменения?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 24
+        }
+      ],
+      "verified": true,
+      "category": "fact",
+      "difficulty": "easy"
+    },
+    {
+      "id": "f06_exam_extra_time",
+      "question": "На сколько максимум могут увеличить длительность внутреннего экзамена поступающему с ОВЗ?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 36
+        }
+      ],
+      "verified": true,
+      "category": "fact",
+      "difficulty": "easy"
+    },
+    {
+      "id": "f07_school_olymp_winner",
+      "question": "Сколько баллов начисляется за победу в олимпиаде школьников в 2025/2026 учебном году, если результат не использован для особого права?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 13
+        }
+      ],
+      "verified": true,
+      "category": "fact",
+      "difficulty": "medium"
+    },
+    {
+      "id": "f08_enrollment_results_visibility",
+      "question": "Как долго на сайте университета должны оставаться сведения о состоявшемся зачислении?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 30
+        }
+      ],
+      "verified": true,
+      "category": "fact",
+      "difficulty": "medium"
+    },
+    {
+      "id": "p01_apply_channels",
+      "question": "Какими способами можно подать заявление и документы для поступления?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 18
+        }
+      ],
+      "verified": true,
+      "category": "procedure",
+      "difficulty": "easy"
+    },
+    {
+      "id": "p02_budget_paid_applications",
+      "question": "Если я рассматриваю и бюджет, и платное обучение, сколько заявлений нужно подать в Финансовый университет?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 18
+        }
+      ],
+      "verified": true,
+      "category": "procedure",
+      "difficulty": "medium"
+    },
+    {
+      "id": "p03_appeal_process",
+      "question": "Когда и как подать апелляцию на оценку внутреннего вступительного испытания?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 12
+        }
+      ],
+      "verified": true,
+      "category": "procedure",
+      "difficulty": "hard"
+    },
+    {
+      "id": "p04_foreign_documents_translation",
+      "question": "Какие требования предъявляются к документам на иностранном языке и документам, выданным за рубежом?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 23
+        }
+      ],
+      "verified": true,
+      "category": "procedure",
+      "difficulty": "hard"
+    },
+    {
+      "id": "p05_change_priorities",
+      "question": "Можно ли поменять приоритеты зачисления после отправки заявления через Госуслуги и как часто?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 20
+        }
+      ],
+      "verified": true,
+      "category": "procedure",
+      "difficulty": "hard"
+    },
+    {
+      "id": "p06_missed_exam",
+      "question": "Что делать, если пропустил внутреннее вступительное испытание по болезни?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 11
+        }
+      ],
+      "verified": true,
+      "category": "procedure",
+      "difficulty": "medium"
+    },
+    {
+      "id": "p07_budget_consent",
+      "question": "Каким способом подаётся согласие на зачисление на бюджет и распространяется ли оно сразу на несколько конкурсных групп?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 27
+        }
+      ],
+      "verified": true,
+      "category": "procedure",
+      "difficulty": "medium"
+    },
+    {
+      "id": "p08_withdrawal_distinctions",
+      "question": "Чем отличается отзыв заявления о приёме от отказа от уже состоявшегося зачисления?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 29
+        }
+      ],
+      "verified": true,
+      "category": "procedure",
+      "difficulty": "hard"
+    },
+    {
+      "id": "c01_budget_vs_paid_deadlines",
+      "question": "Чем отличаются сроки окончания подачи документов на обычный бюджет и платное обучение в 2026 году?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 34
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 35
+        }
+      ],
+      "verified": true,
+      "category": "composite",
+      "difficulty": "hard"
+    },
+    {
+      "id": "c02_main_vs_extra_budget",
+      "question": "Чем отличаются основные сроки бюджетного приёма от дополнительного приёма в августе 2026 года?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 34
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 35
+        }
+      ],
+      "verified": true,
+      "category": "composite",
+      "difficulty": "hard"
+    },
+    {
+      "id": "c03_exam_ties_order",
+      "question": "Если у двух поступающих с ЕГЭ одинаковая сумма конкурсных баллов, какие показатели сравниваются дальше?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 26
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 27
+        }
+      ],
+      "verified": true,
+      "category": "composite",
+      "difficulty": "hard"
+    },
+    {
+      "id": "c04_bvi_once",
+      "question": "Можно ли воспользоваться правом поступления без вступительных испытаний в двух разных вузах на бюджет одновременно?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 16
+        }
+      ],
+      "verified": true,
+      "category": "composite",
+      "difficulty": "hard"
+    },
+    {
+      "id": "c05_applicants_vs_competition_lists",
+      "question": "Чем список подавших заявление отличается от конкурсного списка: когда их публикуют и как ранжируют?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 24
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 25
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 26
+        }
+      ],
+      "verified": true,
+      "category": "composite",
+      "difficulty": "hard"
+    },
+    {
+      "id": "c06_paid_after_budget",
+      "question": "Если поступающий уже зачислен на бюджет, может ли он отдельно быть зачислен на платную программу?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 18
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 28
+        }
+      ],
+      "verified": true,
+      "category": "composite",
+      "difficulty": "hard"
+    },
+    {
+      "id": "c07_quota_order_unused",
+      "question": "В какой очередности выделяют квоты на бюджетные места и что делают с квотными местами, оставшимися после приоритетного зачисления?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 4
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 31
+        }
+      ],
+      "verified": true,
+      "category": "composite",
+      "difficulty": "hard"
+    },
+    {
+      "id": "c08_achievements_arithmetic",
+      "question": "Абитуриент имеет аттестат с отличием, победил в олимпиаде школьников 2025/2026 и получил золотой знак ГТО. Сколько это даст баллов, если все условия учёта соблюдены и олимпиада не используется для особых прав?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 12
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 13
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 14
+        }
+      ],
+      "verified": true,
+      "category": "composite",
+      "difficulty": "hard"
+    },
+    {
+      "id": "s01_olympiad_bvi_two_places",
+      "question": "Я имею право поступать без вступительных испытаний и хочу указать две разные программы в двух университетах на бюджет. Можно ли реализовать это право для обеих?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 16
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 7
+        }
+      ],
+      "verified": true,
+      "category": "scenario",
+      "difficulty": "hard"
+    },
+    {
+      "id": "s02_best_exam_score",
+      "question": "У меня 81 балл ЕГЭ по предмету и 88 баллов за внутренний экзамен по тому же предмету. Какой результат зачтут, если я имел право сдавать внутренний экзамен и оба результата выше минимума?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 10
+        }
+      ],
+      "verified": true,
+      "category": "scenario",
+      "difficulty": "medium"
+    },
+    {
+      "id": "s03_missed_due_illness",
+      "question": "Я заболел в день очного внутреннего экзамена и могу показать медицинские документы. Экзамен потерян или есть возможность пересдачи?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 11
+        }
+      ],
+      "verified": true,
+      "category": "scenario",
+      "difficulty": "medium"
+    },
+    {
+      "id": "s04_change_university_after_enrollment",
+      "question": "Меня уже зачислили на бюджет в Финансовый университет, но я хочу согласиться на бюджетное зачисление в другой вуз. Какие действия обязательны?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 27
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 29
+        }
+      ],
+      "verified": true,
+      "category": "scenario",
+      "difficulty": "hard"
+    },
+    {
+      "id": "s05_foreign_education_recognition",
+      "question": "У меня иностранный аттестат, для которого в России требуется признание. До какого срока можно донести свидетельство о признании, если поступаю на бюджет или на платное?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 20
+        }
+      ],
+      "verified": true,
+      "category": "scenario",
+      "difficulty": "hard"
+    },
+    {
+      "id": "s06_target_career_event_no_list",
+      "question": "Я участвовал в профориентационном мероприятии заказчика целевого обучения, но заказчик не передал меня в список участников до начала приёма. Можно ли автоматически получить 5 целевых баллов?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 13
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 40
+        }
+      ],
+      "verified": true,
+      "category": "scenario",
+      "difficulty": "hard"
+    },
+    {
+      "id": "r01_uncertified_copies",
+      "question": "Нужно ли идти к нотариусу, чтобы заверить ксерокопии документов для приёмной комиссии?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 22
+        }
+      ],
+      "verified": true,
+      "category": "paraphrase",
+      "difficulty": "medium"
+    },
+    {
+      "id": "r02_no_names_in_lists",
+      "question": "Почему в опубликованном списке абитуриентов нет фамилий, только какие-то коды?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 23
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 34
+        }
+      ],
+      "verified": true,
+      "category": "paraphrase",
+      "difficulty": "medium"
+    },
+    {
+      "id": "r03_two_exams_per_day",
+      "question": "Можно ли закрыть сразу два вступительных экзамена в один день, если мне так удобнее?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 11
+        }
+      ],
+      "verified": true,
+      "category": "paraphrase",
+      "difficulty": "medium"
+    },
+    {
+      "id": "r04_olympiad_two_100s",
+      "question": "Одна победа в олимпиаде даёт право поставить по 100 баллов сразу за два разных предмета в одном конкурсе?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 17
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 18
+        }
+      ],
+      "verified": true,
+      "category": "paraphrase",
+      "difficulty": "hard"
+    },
+    {
+      "id": "r05_special_rules_interview",
+      "question": "Если я поступаю по особому порядку главы XVII, могу ли вместо обычной формы испытания попросить собеседование по русскому языку?",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 45
+        }
+      ],
+      "verified": true,
+      "category": "paraphrase",
+      "difficulty": "hard"
+    }
+  ]
+}

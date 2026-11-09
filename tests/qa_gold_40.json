@@ -1,0 +1,1677 @@
+{
+  "metadata": {
+    "dataset": "FA Admissions RAG — независимый набор 40 вопросов",
+    "document": "Правила приёма бакалавриат/специалитет 2026/2027",
+    "source_pdf": "rules_bachelor_2026_searchable.pdf",
+    "source_pdf_pages": 47,
+    "page_numbering": "Номера страниц — PDF, не печатная нумерация",
+    "evaluation_note": "Разметка сделана непосредственно по PDF до запуска retrieval; эталоны привязаны к странице и пункту. Вопросы без ответа нельзя оценивать стандартной page Recall@K; их оценивают отдельно на корректный отказ от выдумывания. OCR-ошибки могут требовать сверки с изображением страницы."
+  },
+  "cases": [
+    {
+      "id": "f01_five_universities",
+      "category": "fact",
+      "category_ru": "Фактический",
+      "difficulty": "easy",
+      "question": "Во сколько вузов одновременно разрешено подать заявления на бакалавриат или специалитет?",
+      "answerable": true,
+      "gold_answer": "Не более чем в 5 образовательных организаций одновременно.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 6
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 7
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 6,
+          "clauses": "п. 17 — начало",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 7,
+          "clauses": "п. 17 — окончание",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 6,
+          "quote_ocr": "Предельное количество организаций, в которые поступающий вправе"
+        },
+        {
+          "pdf_page": 7,
+          "quote_ocr": "программам специалитета, составляет 5."
+        }
+      ],
+      "must_mention": [
+        "5 организаций",
+        "одновременно"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "f02_five_directions",
+      "category": "fact",
+      "category_ru": "Фактический",
+      "difficulty": "easy",
+      "question": "По скольким специальностям и направлениям подготовки можно одновременно участвовать в конкурсе внутри Финансового университета?",
+      "answerable": true,
+      "gold_answer": "Не более чем по 5 специальностям и (или) направлениям подготовки в Финансовом университете. В пределах каждой из них можно участвовать в нескольких конкурсных группах.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 7
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 7,
+          "clauses": "пп. 18–19",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 7,
+          "quote_ocr": "в Финансовом университете составляет 5."
+        },
+        {
+          "pdf_page": 7,
+          "quote_ocr": "в рамках каждой специальности, каждого направления подготовки."
+        }
+      ],
+      "must_mention": [
+        "5 специальностей или направлений",
+        "различные конкурсные группы"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "f03_exam_max",
+      "category": "fact",
+      "category_ru": "Фактический",
+      "difficulty": "easy",
+      "question": "Каков максимальный результат за одно вступительное испытание по правилам приёма?",
+      "answerable": true,
+      "gold_answer": "Максимальный результат за каждое вступительное испытание на бакалавриат и специалитет составляет 100 баллов.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 10
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 10,
+          "clauses": "п. 34",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "quote_ocr": "Максимальное количество баллов для каждого вступительного испытания"
+        }
+      ],
+      "must_mention": [
+        "100 баллов"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "f04_exam_publication",
+      "category": "fact",
+      "category_ru": "Фактический",
+      "difficulty": "easy",
+      "question": "Через сколько рабочих дней должны объявить результаты внутреннего вступительного испытания?",
+      "answerable": true,
+      "gold_answer": "Результаты объявляют на официальном сайте в течение 3 рабочих дней после проведения испытания, но не позднее чем за 1 день до публикации конкурсных списков.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 11
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 11,
+          "clauses": "п. 45",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "quote_ocr": "в течение трех рабочих дней после дня проведения"
+        },
+        {
+          "pdf_page": 11,
+          "quote_ocr": "но не позднее чем за один день до публикации"
+        }
+      ],
+      "must_mention": [
+        "3 рабочих дня",
+        "не позднее чем за день до конкурсных списков"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "f05_lists_updates",
+      "category": "fact",
+      "category_ru": "Фактический",
+      "difficulty": "easy",
+      "question": "Сколько раз в сутки должны обновляться конкурсные списки, если есть изменения?",
+      "answerable": true,
+      "gold_answer": "При наличии изменений конкурсные списки обновляют ежедневно не менее 5 раз в сутки вплоть до дня издания приказов о зачислении по соответствующему конкурсу включительно.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 24
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 24,
+          "clauses": "п. 82",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 24,
+          "quote_ocr": "не менее 5 раз в сутки."
+        }
+      ],
+      "must_mention": [
+        "не менее 5 раз",
+        "при наличии изменений"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "f06_exam_extra_time",
+      "category": "fact",
+      "category_ru": "Фактический",
+      "difficulty": "easy",
+      "question": "На сколько максимум могут увеличить длительность внутреннего экзамена поступающему с ОВЗ?",
+      "answerable": true,
+      "gold_answer": "По решению Финансового университета продолжительность внутреннего испытания может быть увеличена, но не более чем на 1,5 часа.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 36
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 36,
+          "clauses": "п. 128",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 36,
+          "quote_ocr": "но не более чем на 1,5 часа."
+        }
+      ],
+      "must_mention": [
+        "1,5 часа",
+        "по решению университета"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "f07_school_olymp_winner",
+      "category": "fact",
+      "category_ru": "Фактический",
+      "difficulty": "medium",
+      "question": "Сколько баллов начисляется за победу в олимпиаде школьников в 2025/2026 учебном году, если результат не использован для особого права?",
+      "answerable": true,
+      "gold_answer": "5 баллов за статус победителя олимпиады школьников, если результат получен в 2025/2026 учебном году и не используется для особых прав или особого преимущества в конкретной конкурсной группе.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 13
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 13,
+          "clauses": "п. 55, подп. 2",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 13,
+          "quote_ocr": "Учитываются результаты, полученные в 2025/2026 учебном году, —"
+        }
+      ],
+      "must_mention": [
+        "5 баллов",
+        "2025/2026",
+        "не используется для особого права"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "f08_enrollment_results_visibility",
+      "category": "fact",
+      "category_ru": "Фактический",
+      "difficulty": "medium",
+      "question": "Как долго на сайте университета должны оставаться сведения о состоявшемся зачислении?",
+      "answerable": true,
+      "gold_answer": "Сведения о зачислении размещаются в день издания приказов и должны быть доступны на официальном сайте 6 месяцев со дня издания приказов.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 30
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 30,
+          "clauses": "п. 104",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 30,
+          "quote_ocr": "должны быть доступны"
+        },
+        {
+          "pdf_page": 30,
+          "quote_ocr": "в течение 6 месяцев со дня их издания."
+        }
+      ],
+      "must_mention": [
+        "6 месяцев",
+        "от даты приказов"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "p01_apply_channels",
+      "category": "procedure",
+      "category_ru": "Процедурный",
+      "difficulty": "easy",
+      "question": "Какими способами можно подать заявление и документы для поступления?",
+      "answerable": true,
+      "gold_answer": "Три способа: лично в Финансовый университет, через оператора почтовой связи общего пользования или посредством ЕПГУ («Госуслуги»). При личной подаче выдаётся расписка о приёме.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 18
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 18,
+          "clauses": "п. 67",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 18,
+          "quote_ocr": "представляет в Финансовый университет лично;"
+        },
+        {
+          "pdf_page": 18,
+          "quote_ocr": "направляет в Финансовый университет через оператора почтовой связи"
+        },
+        {
+          "pdf_page": 18,
+          "quote_ocr": "посредством федеральной государственной"
+        }
+      ],
+      "must_mention": [
+        "лично",
+        "почтой",
+        "ЕПГУ"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "p02_budget_paid_applications",
+      "category": "procedure",
+      "category_ru": "Процедурный",
+      "difficulty": "medium",
+      "question": "Если я рассматриваю и бюджет, и платное обучение, сколько заявлений нужно подать в Финансовый университет?",
+      "answerable": true,
+      "gold_answer": "Одно заявление о приёме на места в рамках контрольных цифр приёма (бюджет) и отдельное одно заявление на платные места — если поступающий планирует участвовать в обоих видах конкурсов.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 18
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 18,
+          "clauses": "п. 66",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 18,
+          "quote_ocr": "одно заявление о приеме в Финансовый университет на места в рамках"
+        },
+        {
+          "pdf_page": 18,
+          "quote_ocr": "одно заявление о приеме в Финансовый университет на платные места"
+        }
+      ],
+      "must_mention": [
+        "отдельное заявление на бюджет",
+        "отдельное на платные"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "p03_appeal_process",
+      "category": "procedure",
+      "category_ru": "Процедурный",
+      "difficulty": "hard",
+      "question": "Когда и как подать апелляцию на оценку внутреннего вступительного испытания?",
+      "answerable": true,
+      "gold_answer": "В день объявления результатов либо следующий рабочий день можно ознакомиться с проверенной работой. В день ознакомления поступающий лично подаёт апелляцию по порядку проведения экзамена и/или оценке. Её рассматривают не позднее следующего рабочего дня после подачи; комиссия может изменить оценку либо оставить её прежней.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 12
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 12,
+          "clauses": "пп. 46–53",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "quote_ocr": "Поступающий имеет право в день объявления результатов"
+        },
+        {
+          "pdf_page": 12,
+          "quote_ocr": "Апелляция подается лично."
+        },
+        {
+          "pdf_page": 12,
+          "quote_ocr": "не позднее следующего рабочего дня после дня ее подачи."
+        }
+      ],
+      "must_mention": [
+        "ознакомление в день публикации или следующий рабочий день",
+        "апелляция лично в день ознакомления",
+        "рассмотрение следующий рабочий день"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "p04_foreign_documents_translation",
+      "category": "procedure",
+      "category_ru": "Процедурный",
+      "difficulty": "hard",
+      "question": "Какие требования предъявляются к документам на иностранном языке и документам, выданным за рубежом?",
+      "answerable": true,
+      "gold_answer": "Иноязычные документы подаются с переводом на русский язык, нотариально заверенным (включая консульское должностное лицо) либо заверенным иным способом, установленным университетом, если международный договор не предусматривает иное. Иностранные документы должны быть легализованы, если законодательство РФ или международный договор не устанавливает исключение.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 23
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 23,
+          "clauses": "пп. 76–77",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 23,
+          "quote_ocr": "Документы, выполненные на иностранном языке, представляются с переводом на русский язык"
+        },
+        {
+          "pdf_page": 23,
+          "quote_ocr": "Документы, полученные в иностранном государстве, должны быть легализованы"
+        }
+      ],
+      "must_mention": [
+        "перевод на русский",
+        "заверение или предусмотренное исключение",
+        "легализация с исключениями"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "p05_change_priorities",
+      "category": "procedure",
+      "category_ru": "Процедурный",
+      "difficulty": "hard",
+      "question": "Можно ли поменять приоритеты зачисления после отправки заявления через Госуслуги и как часто?",
+      "answerable": true,
+      "gold_answer": "Да. До предусмотренного правилами предельного срока можно менять приоритеты и конкурсные группы; на ЕПГУ приоритеты разрешено менять не чаще одного раза в 2 часа. Изменения в целом доступны не позднее дня завершения приёма документов без внутренних испытаний; после срока приёма со сдачей испытаний нельзя добавлять новые конкурсные группы, для которых требуются новые внутренние испытания.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 20
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 20,
+          "clauses": "п. 73",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 20,
+          "quote_ocr": "Изменение приоритетов зачисления на ЕПГУ осуществляется не чаще"
+        },
+        {
+          "pdf_page": 20,
+          "quote_ocr": "не позднее дня завершения приема документов без сдачи вступительных испытаний"
+        }
+      ],
+      "must_mention": [
+        "можно менять",
+        "раз в 2 часа",
+        "ограничения по срокам и новым испытаниям"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "p06_missed_exam",
+      "category": "procedure",
+      "category_ru": "Процедурный",
+      "difficulty": "medium",
+      "question": "Что делать, если пропустил внутреннее вступительное испытание по болезни?",
+      "answerable": true,
+      "gold_answer": "Если уважительная причина (например, болезнь) документально подтверждена, поступающего допускают к сдаче в другой группе либо в резервный день; университет устанавливает в расписании один резервный день.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 11
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 11,
+          "clauses": "пп. 41–42",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "quote_ocr": "болезнь или иные обстоятельства, подтвержденные документально"
+        },
+        {
+          "pdf_page": 11,
+          "quote_ocr": "в другой группе или в резервный день."
+        }
+      ],
+      "must_mention": [
+        "документально подтверждённая причина",
+        "другая группа или резервный день"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "p07_budget_consent",
+      "category": "procedure",
+      "category_ru": "Процедурный",
+      "difficulty": "medium",
+      "question": "Каким способом подаётся согласие на зачисление на бюджет и распространяется ли оно сразу на несколько конкурсных групп?",
+      "answerable": true,
+      "gold_answer": "Для бюджетного зачисления согласие подают электронно через отметку на ЕПГУ либо на бумаге лично или почтой. Согласие действует в отношении всех конкурсных групп на бюджетные места Финансового университета по бакалавриату и специалитету. Электронное согласие можно представлять не чаще раза в 2 часа.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 27
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 27,
+          "clauses": "пп. 89–90",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 27,
+          "quote_ocr": "Согласие на зачисление представляется в электронном виде"
+        },
+        {
+          "pdf_page": 27,
+          "quote_ocr": "Согласие на зачисление применяется ко всем конкурсным группам"
+        }
+      ],
+      "must_mention": [
+        "ЕПГУ или бумага",
+        "для всех бюджетных конкурсных групп",
+        "раз в 2 часа электронно"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "p08_withdrawal_distinctions",
+      "category": "procedure",
+      "category_ru": "Процедурный",
+      "difficulty": "hard",
+      "question": "Чем отличается отзыв заявления о приёме от отказа от уже состоявшегося зачисления?",
+      "answerable": true,
+      "gold_answer": "При отзыве заявления о приёме поступающего исключают из списков подавших заявление, конкурсных списков и числа зачисленных. При отказе от зачисления его исключают из числа зачисленных, но он может не отзывать согласие на зачисление; в конкурсные списки вносят необходимые изменения.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 29
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 29,
+          "clauses": "пп. 98–99",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 29,
+          "quote_ocr": "При отзыве заявления о приеме Финансовый университет исключает"
+        },
+        {
+          "pdf_page": 29,
+          "quote_ocr": "Поступающий, зачисленный на обучение, имеет право отказаться от зачисления без отзыва согласия"
+        }
+      ],
+      "must_mention": [
+        "отзыв заявления удаляет из списков",
+        "отказ от зачисления не требует отзыва согласия"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "c01_budget_vs_paid_deadlines",
+      "category": "composite",
+      "category_ru": "Составной",
+      "difficulty": "hard",
+      "question": "Чем отличаются сроки окончания подачи документов на обычный бюджет и платное обучение в 2026 году?",
+      "answerable": true,
+      "gold_answer": "В основной кампании на бюджет: при необходимости сдавать внутренние вступительные испытания — до 15 июля 2026 года, 17:00 МСК; без них — до 25 июля 2026 года, 17:00 МСК. На платные места приём заявлений и документов заканчивается 12 августа 2026 года в 17:00 МСК.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 34
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 35
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 34,
+          "clauses": "п. 123, подп. 1",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 35,
+          "clauses": "п. 125, подп. 1",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 34,
+          "quote_ocr": "15 июля 2026 года (до 17:00 по московскому времени)"
+        },
+        {
+          "pdf_page": 34,
+          "quote_ocr": "25 июля 2026 года (до 17:00 по московскому времени)"
+        },
+        {
+          "pdf_page": 35,
+          "quote_ocr": "12 августа 2026 года (до 17:00 по московскому времени)"
+        }
+      ],
+      "must_mention": [
+        "бюджет с ВИ 15 июля 17:00",
+        "бюджет без ВИ 25 июля 17:00",
+        "платное 12 августа 17:00"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "c02_main_vs_extra_budget",
+      "category": "composite",
+      "category_ru": "Составной",
+      "difficulty": "hard",
+      "question": "Чем отличаются основные сроки бюджетного приёма от дополнительного приёма в августе 2026 года?",
+      "answerable": true,
+      "gold_answer": "Основной бюджетный приём начинается 20 июня; документы с внутренними испытаниями принимаются до 15 июля, без них — до 25 июля. Дополнительный бюджетный приём начинается 12 августа; документы с внутренними испытаниями — до 14 августа, без них — до 21 августа, в обоих случаях до 17:00 МСК. ",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 34
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 35
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 34,
+          "clauses": "п. 123, подп. 1",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 35,
+          "clauses": "п. 124, подп. 1",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 34,
+          "quote_ocr": "начало — 20 июня 2026 года;"
+        },
+        {
+          "pdf_page": 35,
+          "quote_ocr": "начало — 12 августа 2026 года;"
+        },
+        {
+          "pdf_page": 35,
+          "quote_ocr": "завершения приема документов без сдачи вступительных испытаний"
+        }
+      ],
+      "must_mention": [
+        "основной 20 июня, 15/25 июля",
+        "дополнительный 12 августа, 14/21 августа",
+        "разница с основным этапом зачисления"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "c03_exam_ties_order",
+      "category": "composite",
+      "category_ru": "Составной",
+      "difficulty": "hard",
+      "question": "Если у двух поступающих с ЕГЭ одинаковая сумма конкурсных баллов, какие показатели сравниваются дальше?",
+      "answerable": true,
+      "gold_answer": "При ранжировании по результатам ЕГЭ и/или внутренних испытаний после общей суммы конкурсных баллов сравнивают: сумму баллов за испытания; баллы за отдельные испытания по их приоритетности; баллы за индивидуальные достижения; затем предусмотренные преимущественные права и достижения для разрешения равенства. ",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 26
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 27
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 26,
+          "clauses": "п. 87, подп. 3 — начало",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 27,
+          "clauses": "п. 87, подп. 3 — продолжение",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 26,
+          "quote_ocr": "по убыванию суммы конкурсных баллов;"
+        },
+        {
+          "pdf_page": 27,
+          "quote_ocr": "по убыванию количества баллов за отдельные вступительные испытания"
+        }
+      ],
+      "must_mention": [
+        "сумма испытаний",
+        "приоритет отдельных испытаний",
+        "индивидуальные достижения",
+        "преимущественные права"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "c04_bvi_once",
+      "category": "composite",
+      "category_ru": "Составной",
+      "difficulty": "hard",
+      "question": "Можно ли воспользоваться правом поступления без вступительных испытаний в двух разных вузах на бюджет одновременно?",
+      "answerable": true,
+      "gold_answer": "Нет. В рамках бюджетного приёма право на поступление без вступительных испытаний по указанным в п. 61 основаниям используется как единое право только в одной организации и на одну образовательную программу по выбору. При этом в пределах этой программы в той же организации оно может использоваться в разных конкурсных группах.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 16
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 16,
+          "clauses": "п. 61",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 16,
+          "quote_ocr": "только в одну организацию только на одну образовательную программу"
+        },
+        {
+          "pdf_page": 16,
+          "quote_ocr": "по различным конкурсным группам."
+        }
+      ],
+      "must_mention": [
+        "одна организация",
+        "одна образовательная программа",
+        "несколько конкурсных групп внутри неё"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "c05_applicants_vs_competition_lists",
+      "category": "composite",
+      "category_ru": "Составной",
+      "difficulty": "hard",
+      "question": "Чем список подавших заявление отличается от конкурсного списка: когда их публикуют и как ранжируют?",
+      "answerable": true,
+      "gold_answer": "Список подавших заявление публикуют с начала приёма документов и обновляют при изменениях до появления конкурсных списков; его упорядочивают по сумме конкурсных баллов (если баллы имеются), а при равенстве — по уникальному коду. Конкурсные списки создают после приёма документов и проведения испытаний; они имеют специальный порядок ранжирования по п. 87 и обновляются при изменениях минимум 5 раз в сутки до приказов о зачислении.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 24
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 25
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 26
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 24,
+          "clauses": "пп. 81–82",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 25,
+          "clauses": "п. 86",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 26,
+          "clauses": "п. 87",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 24,
+          "quote_ocr": "Указанные списки обновляются при наличии изменений ежедневно"
+        },
+        {
+          "pdf_page": 25,
+          "quote_ocr": "при равенстве суммы конкурсных баллов — по уникальному коду"
+        },
+        {
+          "pdf_page": 26,
+          "quote_ocr": "Поступающие, включенные в конкурсный список, ранжируются"
+        }
+      ],
+      "must_mention": [
+        "два разных типа списков",
+        "сроки публикации и обновления",
+        "разный принцип разрешения равенства"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "c06_paid_after_budget",
+      "category": "composite",
+      "category_ru": "Составной",
+      "difficulty": "hard",
+      "question": "Если поступающий уже зачислен на бюджет, может ли он отдельно быть зачислен на платную программу?",
+      "answerable": true,
+      "gold_answer": "Да, правила допускают самостоятельный конкурс и заявление на платные места; зачисление на платные места осуществляется независимо от бюджетного. Для платного зачисления необходимо пройти по конкурсу и иметь заключённый договор об образовании к установленному сроку.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 18
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 28
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 18,
+          "clauses": "п. 66",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 28,
+          "clauses": "п. 94",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 18,
+          "quote_ocr": "одно заявление о приеме в Финансовый университет на платные места"
+        },
+        {
+          "pdf_page": 28,
+          "quote_ocr": "Зачисление на платные места осуществляется вне зависимости от зачисления"
+        }
+      ],
+      "must_mention": [
+        "отдельный платный конкурс",
+        "договор к сроку",
+        "не зависит от зачисления на бюджет"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "c07_quota_order_unused",
+      "category": "composite",
+      "category_ru": "Составной",
+      "difficulty": "hard",
+      "question": "В какой очередности выделяют квоты на бюджетные места и что делают с квотными местами, оставшимися после приоритетного зачисления?",
+      "answerable": true,
+      "gold_answer": "При обычном распределении бюджетных мест (кроме исключений дополнительного приёма) сначала выделяют отдельную квоту, затем особую квоту из остатка, затем целевую квоту из остатка. Места особой, отдельной и целевой квот, оставшиеся незаполненными или освободившиеся после приоритетного этапа, добавляют к основным бюджетным местам.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 4
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 31
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 4,
+          "clauses": "п. 8",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 31,
+          "clauses": "п. 110",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 4,
+          "quote_ocr": "выделяется отдельная квота;"
+        },
+        {
+          "pdf_page": 4,
+          "quote_ocr": "выделяется особая квота в пределах оставшегося количества мест"
+        },
+        {
+          "pdf_page": 31,
+          "quote_ocr": "добавляются к основным бюджетным местам."
+        }
+      ],
+      "must_mention": [
+        "отдельная → особая → целевая",
+        "после приоритетного этапа остатки к основным местам"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "c08_achievements_arithmetic",
+      "category": "composite",
+      "category_ru": "Составной",
+      "difficulty": "hard",
+      "question": "Абитуриент имеет аттестат с отличием, победил в олимпиаде школьников 2025/2026 и получил золотой знак ГТО. Сколько это даст баллов, если все условия учёта соблюдены и олимпиада не используется для особых прав?",
+      "answerable": true,
+      "gold_answer": "3 балла за документ об образовании с отличием + 5 баллов за победу в олимпиаде школьников 2025/2026 + 1 балл за золотой знак ГТО = 9 баллов. Общие индивидуальные достижения в сумме ограничены 10 баллами; начисление за ГТО зависит от выполнения условий п. 56.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 12
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 13
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 14
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 12,
+          "clauses": "п. 54",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 13,
+          "clauses": "п. 55, подп. 1–2",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 14,
+          "clauses": "пп. 55 подп. 5 и 56",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 12,
+          "quote_ocr": "количество баллов за общие индивидуальные достижения составляет не более"
+        },
+        {
+          "pdf_page": 13,
+          "quote_ocr": "медалью) — 3 балла;"
+        },
+        {
+          "pdf_page": 14,
+          "quote_ocr": "начисление баллов за наличие знака ГТО осуществляется однократно."
+        }
+      ],
+      "must_mention": [
+        "3+5+1=9",
+        "общий предел 10",
+        "условия олимпиады и ГТО"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "s01_olympiad_bvi_two_places",
+      "category": "scenario",
+      "category_ru": "Ситуационный",
+      "difficulty": "hard",
+      "question": "Я имею право поступать без вступительных испытаний и хочу указать две разные программы в двух университетах на бюджет. Можно ли реализовать это право для обеих?",
+      "answerable": true,
+      "gold_answer": "Нет. Право на приём без вступительных испытаний в бюджетном конкурсе по п. 61 можно использовать как единое право только в одной организации и на одну выбранную образовательную программу. Подавать обычные заявления в другие вузы можно в пределах общего ограничения, но использовать это конкретное право там одновременно нельзя.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 16
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 7
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 16,
+          "clauses": "п. 61",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 7,
+          "clauses": "п. 17",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 16,
+          "quote_ocr": "только в одну организацию только на одну образовательную программу"
+        },
+        {
+          "pdf_page": 7,
+          "quote_ocr": "составляет 5."
+        }
+      ],
+      "must_mention": [
+        "БВИ только в одном вузе и на одной программе",
+        "другие обычные заявления возможны"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "s02_best_exam_score",
+      "category": "scenario",
+      "category_ru": "Ситуационный",
+      "difficulty": "medium",
+      "question": "У меня 81 балл ЕГЭ по предмету и 88 баллов за внутренний экзамен по тому же предмету. Какой результат зачтут, если я имел право сдавать внутренний экзамен и оба результата выше минимума?",
+      "answerable": true,
+      "gold_answer": "Засчитают 88 баллов — наибольший имеющийся допустимый результат по этому вступительному испытанию, если оба не ниже установленного минимума.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 10
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 10,
+          "clauses": "п. 33",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 10,
+          "quote_ocr": "В качестве результата вступительного испытания засчитывается наиболее высокий"
+        }
+      ],
+      "must_mention": [
+        "88 баллов",
+        "применимо при праве сдавать внутреннее испытание",
+        "не ниже минимума"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "s03_missed_due_illness",
+      "category": "scenario",
+      "category_ru": "Ситуационный",
+      "difficulty": "medium",
+      "question": "Я заболел в день очного внутреннего экзамена и могу показать медицинские документы. Экзамен потерян или есть возможность пересдачи?",
+      "answerable": true,
+      "gold_answer": "При документально подтверждённой уважительной причине поступающего допускают к сдаче экзамена в другой группе либо в резервный день. Это не свободная пересдача уже сданного экзамена: каждое испытание обычно сдают однократно.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 11
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 11,
+          "clauses": "пп. 38, 41–42",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "quote_ocr": "Поступающий сдает каждое внутреннее вступительное испытание однократно."
+        },
+        {
+          "pdf_page": 11,
+          "quote_ocr": "в другой группе или в резервный день."
+        }
+      ],
+      "must_mention": [
+        "уважительная причина + документы",
+        "другая группа/резервный день",
+        "не произвольная пересдача"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "s04_change_university_after_enrollment",
+      "category": "scenario",
+      "category_ru": "Ситуационный",
+      "difficulty": "hard",
+      "question": "Меня уже зачислили на бюджет в Финансовый университет, но я хочу согласиться на бюджетное зачисление в другой вуз. Какие действия обязательны?",
+      "answerable": true,
+      "gold_answer": "Необходимо отказаться от уже состоявшегося зачисления и отозвать ранее поданное согласие на зачисление; перед подачей согласия в другой вуз прежнее согласие должно быть отозвано. Процедуры и сроки нужно соблюдать по правилам приёма.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 27
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 29
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 27,
+          "clauses": "п. 90",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 29,
+          "clauses": "п. 100",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 27,
+          "quote_ocr": "то ему необходимо отозвать поданное согласие на зачисление."
+        },
+        {
+          "pdf_page": 29,
+          "quote_ocr": "отказаться от зачисления одновременно с отзывом согласия"
+        }
+      ],
+      "must_mention": [
+        "отказ от зачисления",
+        "отзыв согласия",
+        "не держать согласия одновременно"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "s05_foreign_education_recognition",
+      "category": "scenario",
+      "category_ru": "Ситуационный",
+      "difficulty": "hard",
+      "question": "У меня иностранный аттестат, для которого в России требуется признание. До какого срока можно донести свидетельство о признании, если поступаю на бюджет или на платное?",
+      "answerable": true,
+      "gold_answer": "Иностранный документ об образовании представляют со свидетельством о признании, когда признание требуется. Само свидетельство допускается представить не позднее срока окончания представления согласия на зачисление для бюджета либо не позднее дня завершения заключения договоров для платного приёма.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 20
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 20,
+          "clauses": "п. 74, подп. 2",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 20,
+          "quote_ocr": "Свидетельство о признании иностранного образования"
+        },
+        {
+          "pdf_page": 20,
+          "quote_ocr": "не позднее срока завершения представления согласия на зачисление"
+        }
+      ],
+      "must_mention": [
+        "признание при необходимости",
+        "согласие для бюджета",
+        "договор для платного"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "s06_target_career_event_no_list",
+      "category": "scenario",
+      "category_ru": "Ситуационный",
+      "difficulty": "hard",
+      "question": "Я участвовал в профориентационном мероприятии заказчика целевого обучения, но заказчик не передал меня в список участников до начала приёма. Можно ли автоматически получить 5 целевых баллов?",
+      "answerable": true,
+      "gold_answer": "Нет оснований автоматически начислить 5 целевых баллов только со слов поступающего. По п. 138 баллы включают в сумму конкурсных при наличии поступающего в списке участников, который заказчик передал университету до дня начала приёма заявлений с указанными реквизитами.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 13
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 40
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 13,
+          "clauses": "п. 54, подп. 1",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 40,
+          "clauses": "п. 138",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 13,
+          "quote_ocr": "Количество баллов за целевые индивидуальные достижения составляет 5;"
+        },
+        {
+          "pdf_page": 40,
+          "quote_ocr": "при наличии поступающего в списке"
+        },
+        {
+          "pdf_page": 40,
+          "quote_ocr": "представленном заказчиком в Финансовый университет до дня начала"
+        }
+      ],
+      "must_mention": [
+        "5 баллов только при выполнении документальных условий",
+        "список заказчика до начала приёма"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "r01_uncertified_copies",
+      "category": "paraphrase",
+      "category_ru": "Перефразирование",
+      "difficulty": "medium",
+      "question": "Нужно ли идти к нотариусу, чтобы заверить ксерокопии документов для приёмной комиссии?",
+      "answerable": true,
+      "gold_answer": "По общему правилу нет: документы можно представлять в оригиналах или копиях (электронных образах), а заверять копии не требуется. Если сведения о документе уже подтверждены через ЕПГУ или государственные системы, его копию при подаче заявления можно не предоставлять; существуют специальные исключения для отдельных подтверждений.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 22
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 22,
+          "clauses": "п. 75",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 22,
+          "quote_ocr": "Заверение указанных копий (электронных образов) не требуется."
+        }
+      ],
+      "must_mention": [
+        "заверять копии не нужно",
+        "допустимы оригиналы или копии",
+        "оговорка о специальных случаях"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "r02_no_names_in_lists",
+      "category": "paraphrase",
+      "category_ru": "Перефразирование",
+      "difficulty": "medium",
+      "question": "Почему в опубликованном списке абитуриентов нет фамилий, только какие-то коды?",
+      "answerable": true,
+      "gold_answer": "Правила предписывают публиковать сведения о поступающих без фамилии, имени и отчества, используя уникальный код поступающего. Код выдаётся через ЕПГУ либо университетом в зависимости от способа подачи заявления.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 23
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 34
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 23,
+          "clauses": "п. 78",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 34,
+          "clauses": "п. 121",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 23,
+          "quote_ocr": "Поступающий получает уникальный код"
+        },
+        {
+          "pdf_page": 34,
+          "quote_ocr": "формируется без указания фамилии, имени, отчества поступающих"
+        }
+      ],
+      "must_mention": [
+        "не публикуют ФИО",
+        "уникальный код",
+        "источник кода"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "r03_two_exams_per_day",
+      "category": "paraphrase",
+      "category_ru": "Перефразирование",
+      "difficulty": "medium",
+      "question": "Можно ли закрыть сразу два вступительных экзамена в один день, если мне так удобнее?",
+      "answerable": true,
+      "gold_answer": "Обычно для каждого поступающего проводят одно внутреннее испытание в день, но по желанию поступающего ему могут предоставить возможность сдать несколько внутренних испытаний за день. Это возможность, а не безусловное право выбрать любое расписание.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 11
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 11,
+          "clauses": "п. 40",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 11,
+          "quote_ocr": "По желанию поступающего ему может быть предоставлена возможность сдавать несколько"
+        }
+      ],
+      "must_mention": [
+        "обычно одно",
+        "по желанию могут разрешить несколько"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "r04_olympiad_two_100s",
+      "category": "paraphrase",
+      "category_ru": "Перефразирование",
+      "difficulty": "hard",
+      "question": "Одна победа в олимпиаде даёт право поставить по 100 баллов сразу за два разных предмета в одном конкурсе?",
+      "answerable": true,
+      "gold_answer": "Нет. По одному основанию на 100 баллов в рамках одного конкурса начисляют 100 баллов по одному общеобразовательному испытанию; если предметов несколько, поступающий выбирает один. Несколько различных оснований на 100 баллов могут использоваться одновременно.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 17
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 18
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 17,
+          "clauses": "п. 64 — начало",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        },
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 18,
+          "clauses": "п. 64 — продолжение",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 17,
+          "quote_ocr": "по одному общеобразовательному вступительному испытанию"
+        },
+        {
+          "pdf_page": 17,
+          "quote_ocr": "несколько оснований для получения права на 100 баллов"
+        }
+      ],
+      "must_mention": [
+        "одно основание — один предмет в конкурсе",
+        "разные основания могут сочетаться"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "r05_special_rules_interview",
+      "category": "paraphrase",
+      "category_ru": "Перефразирование",
+      "difficulty": "hard",
+      "question": "Если я поступаю по особому порядку главы XVII, могу ли вместо обычной формы испытания попросить собеседование по русскому языку?",
+      "answerable": true,
+      "gold_answer": "Да. Для лиц, принимаемых в соответствии с главой XVII, вступительные испытания по русскому языку, истории и обществознанию, а также русский язык на базе профессионального образования по их желанию проводятся в форме собеседования. Это специальное правило, а не общий выбор для всех поступающих.",
+      "relevant_locations": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "page": 45
+        }
+      ],
+      "sources": [
+        {
+          "filename": "rules_bachelor_2026_searchable.pdf",
+          "pdf_page": 45,
+          "clauses": "п. 156, подп. 2",
+          "official_url": "https://www.fa.ru/upload/constructor/0ce/v2jc8sysg7jyunar03dqfit1gfj7veyn/Prikaz-po-osnovnoy-deyatelnosti-_-0056_o-ot-20.01.2026-Ob-utv.-Pravil-priema-v-fed.-gos.-obrazov.-byudzh.-uch.-vys.-obrazov.-_Finanso-_4574345-v1_stranitsy_2.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "pdf_page": 45,
+          "quote_ocr": "по желанию лиц, поступающих на обучение, в форме собеседования;"
+        }
+      ],
+      "must_mention": [
+        "только для категории главы XVII",
+        "русский язык и перечисленные предметы",
+        "по желанию собеседование"
+      ],
+      "grading_notes": "",
+      "verified": true,
+      "verification_basis": "Текст OCR-PDF и визуальная проверка потенциально неоднозначных цифр/дат"
+    },
+    {
+      "id": "u01_tuition_economics",
+      "category": "unanswerable",
+      "category_ru": "Вне базы знаний",
+      "difficulty": "medium",
+      "question": "Сколько рублей стоит год очного обучения на направлении «Экономика» в 2026/2027 году?",
+      "answerable": false,
+      "gold_answer": "В предоставленных Правилах приёма конкретная стоимость обучения по направлению «Экономика» не указана. Для суммы нужен отдельный официальный документ о стоимости платного обучения.",
+      "relevant_locations": [],
+      "sources": [],
+      "evidence": [],
+      "must_mention": [
+        "не называть цену",
+        "запросить тарифы/приказ о стоимости"
+      ],
+      "grading_notes": "Не отвечать выдуманной суммой; упоминание платных мест не равно тарифу.",
+      "verified": false,
+      "verification_basis": "Не найдено в предоставленных правилах приёма; сведения должны публиковаться в других материалах либо относятся к иной кампании."
+    },
+    {
+      "id": "u02_pass_score_program",
+      "category": "unanswerable",
+      "category_ru": "Вне базы знаний",
+      "difficulty": "hard",
+      "question": "Какой точный проходной балл на бюджетную «Прикладную информатику» по итогам приёма 2026 года?",
+      "answerable": false,
+      "gold_answer": "В этом документе нет итогового проходного балла по указанному направлению. Для него нужны фактические конкурсные результаты и сведения о зачислении; нельзя выводить значение из общих правил.",
+      "relevant_locations": [],
+      "sources": [],
+      "evidence": [],
+      "must_mention": [
+        "не придумывать проходной балл",
+        "нужны результаты конкурса"
+      ],
+      "grading_notes": "",
+      "verified": false,
+      "verification_basis": "Не найдено в предоставленных правилах приёма; сведения должны публиковаться в других материалах либо относятся к иной кампании."
+    },
+    {
+      "id": "u03_places_by_direction",
+      "category": "unanswerable",
+      "category_ru": "Вне базы знаний",
+      "difficulty": "hard",
+      "question": "Сколько бюджетных мест выделено в 2026 году на направление «Бизнес-информатика» в головном кампусе?",
+      "answerable": false,
+      "gold_answer": "В предоставленном PDF нет количественной таблицы мест по указанному направлению и кампусу. Пункт 119 описывает обязанность публиковать такую информацию отдельно; точное число здесь не установлено.",
+      "relevant_locations": [],
+      "sources": [],
+      "evidence": [],
+      "must_mention": [
+        "не придумывать число мест",
+        "направить к опубликованным контрольным цифрам"
+      ],
+      "grading_notes": "",
+      "verified": false,
+      "verification_basis": "Не найдено в предоставленных правилах приёма; сведения должны публиковаться в других материалах либо относятся к иной кампании."
+    },
+    {
+      "id": "u04_dorm_count",
+      "category": "unanswerable",
+      "category_ru": "Вне базы знаний",
+      "difficulty": "hard",
+      "question": "Сколько свободных мест в общежитиях Финансового университета будет для первокурсников осенью 2026 года?",
+      "answerable": false,
+      "gold_answer": "В правилах нет конкретного числа свободных мест в общежитиях. Документ предписывает опубликовать информацию о количестве мест в общежитиях отдельно, но не приводит её и не гарантирует наличие свободных мест для каждого первокурсника.",
+      "relevant_locations": [],
+      "sources": [],
+      "evidence": [],
+      "must_mention": [
+        "не придумывать наличие мест",
+        "обратиться к отдельным сведениям об общежитиях"
+      ],
+      "grading_notes": "",
+      "verified": false,
+      "verification_basis": "Не найдено в предоставленных правилах приёма; сведения должны публиковаться в других материалах либо относятся к иной кампании."
+    },
+    {
+      "id": "u05_next_campaign",
+      "category": "unanswerable",
+      "category_ru": "Вне базы знаний",
+      "difficulty": "medium",
+      "question": "Какая точная дата начала приёма документов на 2027/2028 учебный год?",
+      "answerable": false,
+      "gold_answer": "Этот PDF регламентирует приём на 2026/2027 учебный год, а не кампанию 2027/2028. Указать точную дату начала приёма 2027/2028 по данному документу нельзя; нужны утверждённые правила следующей кампании.",
+      "relevant_locations": [],
+      "sources": [],
+      "evidence": [],
+      "must_mention": [
+        "разграничить 2026/2027 и 2027/2028",
+        "не переносить автоматически дату 20 июня 2026 года"
+      ],
+      "grading_notes": "",
+      "verified": false,
+      "verification_basis": "Не найдено в предоставленных правилах приёма; сведения должны публиковаться в других материалах либо относятся к иной кампании."
+    }
+  ]
+}
