@@ -79,7 +79,14 @@ def main() -> None:
                 cmd = ["tesseract", str(png), str(pdf_prefix)]
                 if tessdata_dir is not None:
                     cmd += ["--tessdata-dir", str(tessdata_dir)]
-                cmd += ["-l", args.lang, "--oem", "1", "pdf"]
+
+                cmd += [
+                    "-l", args.lang,
+                    "--oem", "1",
+                    "-c", "tessedit_create_pdf=1",
+                    "-c", "tessedit_create_txt=0",
+                ]
+
                 proc = subprocess.run(cmd, capture_output=True, text=True)
                 if proc.returncode != 0:
                     raise RuntimeError(f"Ошибка Tesseract на странице {page_idx + 1}: {proc.stderr[-1000:]}")
