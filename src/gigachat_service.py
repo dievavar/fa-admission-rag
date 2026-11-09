@@ -110,7 +110,32 @@ class GigaChatService:
         )
         with self._client() as client:
             response = client.chat(request)
+
         if not response.choices:
             raise RuntimeError("GigaChat вернул пустой ответ")
-        content = response.choices[0].message.content
-        return content.strip() if isinstance(content, str) else str(content).strip()
+
+        choice = response.choices[0]
+
+        reason = getattr(choice, "finish_reason", None)
+        reason = getattr(reason, "value", reason)
+
+        content = choice.message.content or ""
+        content = str(content).strip()
+
+        refusal_patterns = (
+            "генеративные языковые модели не обладают собственным мнением",
+            "к сожалению, иногда генеративные языковые модели",
+        )
+
+        if reason == "blacklist" or any(
+                pattern in content.lower()
+                for pattern in refusal_patterns
+        ):
+            return (
+                "GigaChat не смог сформировать ответ из-за "
+                "ограничений генерации. "
+                "Найденные выдержки из официального документа "
+                "можно посмотреть ниже."
+            )
+
+        return content
